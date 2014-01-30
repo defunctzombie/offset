@@ -1,4 +1,3 @@
-var support = require('dom-support')
 var contains = require('within-document')
 
 /**
@@ -42,10 +41,8 @@ function bodyOffset(body) {
   var top = body.offsetTop
   var left = body.offsetLeft
 
-  if (support.doesNotIncludeMarginInBodyOffset) {
-    top  += parseFloat(body.style.marginTop || 0)
-    left += parseFloat(body.style.marginLeft || 0)
-  }
+  top  += parseFloat(body.style.marginTop || 0)
+  left += parseFloat(body.style.marginLeft || 0)
 
   return {
     top: top,
